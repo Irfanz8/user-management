@@ -1,5 +1,5 @@
 {
-  "name": "auth-jwt",
+  "name": "user-management",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,22 +10,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Irfanz8/Auth-Jwt.git"
+    "url": "git+https://github.com/Irfanz8/user-management.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Irfanz8/Auth-Jwt/issues"
+    "url": "https://github.com/Irfanz8/user-management/issues"
   },
-  "homepage": "https://github.com/Irfanz8/Auth-Jwt#readme",
+  "homepage": "https://github.com/Irfanz8/user-management#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.4"
+    "mongoose": "^6.2.4",
+    "nodemailer": "^6.7.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
