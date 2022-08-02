@@ -2,7 +2,7 @@
 
 var bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
-const {User, Validate} = require("../model/user");
+const User = require("../model/user");
 
 exports.register = async (req, res) => {
    try {
@@ -44,10 +44,11 @@ exports.register = async (req, res) => {
 
     user.token = token;
 
-    res.status(201).json(user);
+    return res.status(200).send({message : "Success", data: user });
 
    } catch (error) {
-       console.log(error);
+    return res.status(400).send({message : "Invalid Credential"});
+
    } 
 }
 
@@ -55,7 +56,6 @@ exports.login = async (req, res) => {
     try {
       
         const { email, password } = req.body;
-
         if (!(email && password)) {
             res.status(400).send("all input required");
         }
@@ -75,11 +75,13 @@ exports.login = async (req, res) => {
 
             user.token = token;
             
-            res.status(200).json(user);
+            // res.status(200).json(user);
+            return res.status(200).send({message : "Success", data: user });
+
         }
-        return res.status(400).send("invalid Credential");
+        return res.status(400).send({message : "email/password wrong or not created"});
 
     } catch (error) {
-        console.log(error);
+       return res.status(400).send({message : "Invalid Credential"});
     }
 } 
