@@ -8,7 +8,7 @@ const recipeSchema = new mongoose.Schema({
     category_id:{ type: mongoose.ObjectId, ref: 'category' },
     contributor_id: {type: mongoose.ObjectId, ref: 'user'},
     ingredient: {type: Array},
-    steps: { type: Array },
+    step: { type: Array },
     estimation: {type : Number }
 });
 

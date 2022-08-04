@@ -26,7 +26,7 @@ exports.all = async (req, res) => {
             const category_ids = await Category.findOne({ 'name' : category_name });
             recipe = await Recipe.find({'category_id' :category_ids.id}).populate('category_id').populate('contributor_id');
         }else if(recipe_name){
-            recipe = await Recipe.find({'name' :recipe_name}).populate('category_id').populate('contributor_id');
+            recipe = await Recipe.findOne({'name' :recipe_name}).populate('category_id').populate('contributor_id');
         }else{
             recipe = await Recipe.find().populate('category_id').populate('contributor_id');
         }

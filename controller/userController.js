@@ -47,7 +47,7 @@ exports.register = async (req, res) => {
     return res.status(200).send({message : "Success", data: user });
 
    } catch (error) {
-    return res.status(400).send({message : "Invalid Credential"});
+    return res.status(400).send({message : error});
 
    } 
 }
